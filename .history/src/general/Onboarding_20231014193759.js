@@ -1,10 +1,9 @@
 import React from "react";
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Image } from "react-native";
-export default SignUp = () => {
+
+export default Onboarding = () => {
   return (
     <View>
-      <Text>Login text</Text>
+      <Text>Splashscreen text</Text>
       <Image
         source={{
           uri: "https://reactnative.dev/docs/assets/p_cat2.png",

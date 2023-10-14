@@ -36,7 +36,7 @@ export default SlashScreen = function ({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Image source={require("../../assets/splashscreen.png")} style={styles.logo} />
+      <Image source={require("../../assets/icon.png")} style={styles.logo} />
       <Text style={styles.title}>Welcome to BKSport!</Text>
       <Text style={styles.subtest}>
         Make it more convenient for you to book a pitch
@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 49,
     gap: 10,
-    borderColor: "#199A8E",
+    borderColor: "#F47229",
     borderWidth: 1,
     marginBottom: 20,
   },

@@ -10,7 +10,7 @@ import {
   SafeAreaView,
 } from "react-native";
 // import AsyncStorage from "@react-native-async-storage/async-storage";
-export default SlashScreen = function ({ navigation }) {
+export default Onboarding = function ({ navigation }) {
 
   // const [customerID, setCustomerID] = useState('');
   // const [adminID, setAdminID] = useState('');
@@ -36,7 +36,7 @@ export default SlashScreen = function ({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Image source={require("../../assets/splashscreen.png")} style={styles.logo} />
+      <Image source={require("../../assets/icon.png")} style={styles.logo} />
       <Text style={styles.title}>Welcome to BKSport!</Text>
       <Text style={styles.subtest}>
         Make it more convenient for you to book a pitch
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
   },
   button1: {
     marginTop: 70,
-    backgroundColor: "#199A8E",
+    backgroundColor: "#F47229",
     padding: 10,
     width: 181.28,
     height: 48,
@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 49,
     gap: 10,
-    borderColor: "#199A8E",
+    borderColor: "#F47229",
     borderWidth: 1,
     marginBottom: 20,
   },
