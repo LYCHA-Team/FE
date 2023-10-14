@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, Image } from "react-native";
 
-export default SignUp = () => {
+export default SetupInterests = () => {
   return (
     <View>
       <Text>Login text</Text>

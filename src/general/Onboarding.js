@@ -1,10 +1,10 @@
 import React from "react";
 import { View, Text, Image } from "react-native";
 
-export default SignUp = () => {
+export default Onboarding = () => {
   return (
     <View>
-      <Text>Login text</Text>
+      <Text>Onboarding text</Text>
       <Image
         source={{
           uri: "https://reactnative.dev/docs/assets/p_cat2.png",
