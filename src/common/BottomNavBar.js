@@ -1,20 +1,29 @@
 import React from "react";
-import { View, TouchableOpacity, Text, StyleSheet } from "react-native";
+import { View, TouchableOpacity, Text, StyleSheet, ScrollView} from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
-
-const BottomNavBar = () => {
+import { useNavigation } from '@react-navigation/native';
+export default BottomNavBar = function () {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.tab}>
+      <TouchableOpacity
+        onPress={()=> navigation.navigate("Profile")}
+        style={styles.tab}>
         <Icon name="user" color="#ccc" size={25} />
       </TouchableOpacity>
-      <TouchableOpacity style={styles.tab}>
+      <TouchableOpacity
+        onPress={()=> navigation.navigate("Detail")}
+        style={styles.tab}>
         <Icon name="heart" color="#ccc" size={25} />
       </TouchableOpacity>
-      <TouchableOpacity style={styles.tab}>
+      <TouchableOpacity
+        onPress={()=> navigation.navigate("Home")}
+        style={styles.tab}>
         <Icon name="home" color="#ccc" size={25} />
       </TouchableOpacity>
-      <TouchableOpacity style={styles.tab}>
+      <TouchableOpacity
+
+        style={styles.tab} >
         <Icon name="info-circle" color="#ccc" size={25} />
       </TouchableOpacity>
       <TouchableOpacity style={styles.tab}>
@@ -48,4 +57,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default BottomNavBar;
+

@@ -110,7 +110,7 @@ export default SignUp = function ({ navigation }) {
         </View>
 
         <TouchableOpacity
-          onPress={() => navigation.navigate("SetupInterests") }
+          onPress={() => navigation.navigate("Interest") }
           style={{
             marginTop: 20,
             backgroundColor: "#e77c7c",

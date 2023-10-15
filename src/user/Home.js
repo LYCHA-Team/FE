@@ -12,45 +12,23 @@ import {
 } from "react-native";
 import BottomNavBar from "../common/BottomNavBar";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
-import CategoryTile from "../common/CategoryTile";
-import { categoryData } from "../common/CategoryTile";
+import { data } from "./data";
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
 
-const Home = ({ navigation }) => {
+const Posts = ({ data }) => {
   return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView>
-        <View style={styles.titleContainer}>
-          <Text style={styles.title}>Find what you love</Text>
-          <TouchableOpacity>
-            <Icon name="bell" color="#ccc" size={25} />
-          </TouchableOpacity>
-        </View>
-        <View style={styles.input}>
-          <TextInput placeholder="Search"></TextInput>
-        </View>
-        <View style={styles.titleContainer}>
-          <Text style={styles.subtitle}>Category</Text>
-        </View>
-        <ScrollView horizontal>
-          <CategoryTile data={categoryData} />
-        </ScrollView>
-
-        <View style={styles.titleContainer}>
-          <Text style={styles.subtitle}>Activities you may like</Text>
-          <TouchableOpacity style={styles.tab}>
-            <Text style={styles.note}>See all</Text>
-          </TouchableOpacity>
-        </View>
+    <View style={{ display: "flex", rowGap: 15 }}>
+      {data.map((item, index) => (
         <View
+          key={index}
           style={{
             marginLeft: 35,
             marginRight: 35,
             backgroundColor: "#E8F3F1",
             width: windowWidth - 70,
-            height: 150,
+            height: "auto",
             borderRadius: 25,
             padding: 20,
             flex: 1,
@@ -65,17 +43,17 @@ const Home = ({ navigation }) => {
             <Text
               style={{ fontSize: 20, fontWeight: "bold", marginBottom: 20 }}
             >
-              LYCHA
+              {item.name}
             </Text>
-            <Text>Type: Badminton</Text>
-            <Text>Place: Thủ Đức</Text>
+            <Text>Môn chơi: {item.type}</Text>
+            <Text>Địa điểm: {item.location}</Text>
             <TouchableOpacity
               style={{
                 marginTop: 10,
                 borderRadius: 15,
                 backgroundColor: "#199A8E",
                 width: 80,
-                height: 30,
+                height: 40,
                 flex: 1,
                 justifyContent: "center",
                 alignItems: "center",
@@ -86,10 +64,44 @@ const Home = ({ navigation }) => {
             </TouchableOpacity>
           </View>
           <Image
-            source={require("./../../assets/home/shecodes.jpg")}
-            style={{ borderRadius: 100, width: 80, height: 80 }}
+            source={item.src}
+            style={{ borderRadius: 15, width: 100, height: 100 }}
           ></Image>
         </View>
+      ))}
+    </View>
+  );
+};
+
+const Home = ({ navigation }) => {
+  return (
+    <SafeAreaView style={styles.container}>
+      <ScrollView>
+        <View style={styles.titleContainer}>
+          <Text style={styles.title}>Find what you love</Text>
+          <TouchableOpacity>
+            <Icon name="bell" color="#ccc" size={25} />
+          </TouchableOpacity>
+        </View>
+        <View style={styles.input}>
+          <TextInput placeholder="Search"></TextInput>
+        </View>
+        {/* <View style={styles.titleContainer}>
+          <Text style={styles.subtitle}>Category</Text>
+        </View>
+        <ScrollView horizontal>
+          <CategoryTile data={categoryData} />
+        </ScrollView> */}
+
+        <View style={styles.titleContainer}>
+          <Text style={styles.subtitle}>Activities you may like</Text>
+          <TouchableOpacity
+            onPress={()=>{navigation.navigate('Activities')}}
+            style={styles.tab}>
+            <Text style={styles.note}>See all</Text>
+          </TouchableOpacity>
+        </View>
+        <Posts data={data} />
       </ScrollView>
       <BottomNavBar></BottomNavBar>
     </SafeAreaView>

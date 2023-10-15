@@ -15,6 +15,8 @@ import Home from "./src/user/Home";
 import Profile from "./src/user/Profile";
 import Activities from "./src/user/Activities";
 import Interest from "./src/user/Interest";
+import BottomNavBar from "./src/common/BottomNavBar";
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -22,16 +24,21 @@ export default function App() {
     <NavigationContainer>
     <Stack.Navigator
     screenOptions={{headerShown: false,}}>
-      <Stack.Screen name="Interested" component={Interested} />
-      <Stack.Screen name="Activities" component={Activities} />
-      <Stack.Screen name="Profile" component={Profile} />
       <Stack.Screen name="SplashScreen" component={SplashScreen} />
       <Stack.Screen name="Onboarding" component={Onboarding} />
       <Stack.Screen name="SignUp" component={SignUp} />
       <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="Interest" component={Interest} />
+      <Stack.Screen name="Activities" component={Activities} />
+      <Stack.Screen name="Profile" component={Profile} />
+
+
+
+
       <Stack.Screen name="SetupInterests" component={SetupInterests} />
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Detail" component={Detail} />
+      <Stack.Screen name="BottomNavBar" component={BottomNavBar} />
     </Stack.Navigator>
     </NavigationContainer>
   );

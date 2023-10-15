@@ -1,7 +1,8 @@
 import React from "react";
-import { View, Text, Image, StyleSheet,TouchableOpacity } from "react-native";
-
-const Profile = () => {
+import { View, Text, Image, StyleSheet,TouchableOpacity , ScrollView, Dimensions,} from "react-native";
+import BottomNavBar from "../common/BottomNavBar";
+const { width, height } = Dimensions.get("screen");
+export default Profile = function ({navigation}) {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.avatarContainer}>
@@ -10,12 +11,12 @@ const Profile = () => {
           style={styles.avatar}
         />
         <Text style={styles.name}>Amelia Aneta</Text>
-        
+
       </View>
       <View style={styles.list}>
         <View style={styles.listItem}>
           <View style={styles.iconContainer}>
-            
+
             <Image
               source={require("../../assets/heart.png")}
               style={styles.icon}
@@ -90,42 +91,7 @@ const Profile = () => {
             </TouchableOpacity>
         </View>
       </View>
-      <View style={styles.nav}>
-        <TouchableOpacity>
-
-       <Image
-            source={require("../../assets/heart.png")}
-            style={styles.end}
-        />
-        </TouchableOpacity>
-        <TouchableOpacity> 
-
-        <Image
-            source={require("../../assets/user.png")}
-            style={styles.end}
-        />
-        </TouchableOpacity>
-        <TouchableOpacity> 
-        <Image
-            source={require("../../assets/home.png")}
-            style={styles.end}
-        />
-            
-        </TouchableOpacity>
-        <TouchableOpacity> 
-            
-        <Image
-            source={require("../../assets/personal-information.png")}
-            style={styles.end}
-        />
-        </TouchableOpacity>
-        <TouchableOpacity>        
-        <Image
-            source={require("../../assets/messenger.png")}
-            style={styles.end}
-        />
-        </TouchableOpacity>
-      </View>
+      <BottomNavBar></BottomNavBar>
     </ScrollView>
   );
 };
@@ -154,6 +120,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
+    height: 0.7*height,
   },
   listItem: {
     flexDirection: "row",
@@ -202,4 +169,3 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Profile;
