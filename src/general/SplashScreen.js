@@ -8,51 +8,29 @@ import {
   Image,
   TouchableOpacity,
   SafeAreaView,
+  Dimensions,
+  ImageBackground,
 } from "react-native";
-// import AsyncStorage from "@react-native-async-storage/async-storage";
+import LottieView from 'lottie-react-native'
+
+const { width, height } = Dimensions.get("window");
 export default SlashScreen = function ({ navigation }) {
-
-  // const [customerID, setCustomerID] = useState('');
-  // const [adminID, setAdminID] = useState('');
-
-  // useEffect(() => {
-  //   getData();
-  //   console.log("customer", customerID);
-  //   console.log("admin", adminID);
-  // })
-
-  // const getData = async () => {
-  //   try {
-  //     await AsyncStorage.getItem("CustomerID").then((val) => {
-  //       setCustomerID(val);
-  //     });
-  //     await AsyncStorage.getItem("AdminID").then((val) => {
-  //       setAdminID(val);
-  //     });
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
   return (
+
     <View style={styles.container}>
-      <Image source={require("../../assets/splashscreen.png")} style={styles.logo} />
-      <Text style={styles.title}>Welcome to BKSport!</Text>
+      <Image source={require("../../assets/home.jpg")} style={styles.logo} />
+      <Text style={styles.title}>Welcome to</Text>
+      <Image source={require("../../assets/splashscreen.png")} style={styles.title1} />
       <Text style={styles.subtest}>
-        Make it more convenient for you to book a pitch
+        Making it easier for you to find someone to play sports with
       </Text>
       <TouchableOpacity
-        onPress={() => navigation.navigate("Login")}
+        onPress={() => navigation.navigate("Onboarding")}
         style={styles.button1}
       >
-        <Text style={styles.buttonText1}>Login</Text>
+        <Text style={styles.buttonText1}>Let's get started !</Text>
       </TouchableOpacity>
-      <TouchableOpacity
-        onPress={() => navigation.navigate("SignUp")}
-        style={styles.button2}
-      >
-        <Text style={styles.buttonText2}>Sign up</Text>
-      </TouchableOpacity>
+
     </View>
   );
 };
@@ -61,40 +39,46 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    backgroundColor: "#FFFFFF",
+    backgroundColor: "#ffffff",
     justifyContent: "center",
   },
   title: {
     fontSize: 26,
     fontWeight: "bold",
-    marginBottom: 20,
-    marginVertical: 20,
     marginTop: 15,
   },
-  logo: {
-    marginTop: 20,
-    width: 400,
-    height: 250,
-    marginBottom: 50,
+  title1: {
+    width: 0.8*width,
+    height: 0.06*height,
+    resizeMode: "contain",
+
   },
+  logo: {
+    marginTop: 5,
+    width: 1*width,
+    height: 0.38*height,
+    marginBottom: 0,
+  },
+
   subtest: {
     fontSize: 16,
     textAlign: "center",
     marginHorizontal: 30,
     marginBottom: 30,
-    marginTop: 10,
+    marginTop: 0.053*height,
   },
   button1: {
-    marginTop: 70,
+    marginTop: 0.02*height,
     backgroundColor: "#199A8E",
-    padding: 10,
-    width: 181.28,
-    height: 48,
+    padding: 5,
+    marginBottom: 0.01*height,
+    width: 0.8*width,
+    height: 0.06*height,
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    borderRadius: 8,
+    borderRadius: '50%',
     paddingVertical: 10,
     paddingHorizontal: 49,
     gap: 10,
@@ -119,7 +103,7 @@ const styles = StyleSheet.create({
   },
   buttonText1: {
     color: "#FFFFFF",
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: "bold",
   },
   buttonText2: {
