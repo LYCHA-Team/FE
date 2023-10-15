@@ -3,7 +3,7 @@ import { View, Text, Image, StyleSheet,TouchableOpacity } from "react-native";
 
 const Profile = () => {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <View style={styles.avatarContainer}>
         <Image
           source={require("../../assets/download.jpg")}
@@ -126,7 +126,7 @@ const Profile = () => {
         />
         </TouchableOpacity>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
