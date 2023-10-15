@@ -8,29 +8,39 @@ import {
   Image,
   TouchableOpacity,
   SafeAreaView,
-  Dimensions,
 } from "react-native";
-import LottieView from 'lottie-react-native'
+// import AsyncStorage from "@react-native-async-storage/async-storage";
+export default SlashScreen = function ({ navigation }) {
 
-const { width, height } = Dimensions.get("window");
-export default Onboarding = function ({ navigation }) {
+  // const [customerID, setCustomerID] = useState('');
+  // const [adminID, setAdminID] = useState('');
 
+  // useEffect(() => {
+  //   getData();
+  //   console.log("customer", customerID);
+  //   console.log("admin", adminID);
+  // })
+
+  // const getData = async () => {
+  //   try {
+  //     await AsyncStorage.getItem("CustomerID").then((val) => {
+  //       setCustomerID(val);
+  //     });
+  //     await AsyncStorage.getItem("AdminID").then((val) => {
+  //       setAdminID(val);
+  //     });
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   return (
     <View style={styles.container}>
-
-      <View>
-        <LottieView
-          source={require('../../assets/splashscreen.json')}
-          autoPlay
-          loop
-          style={styles.logo}
-        />
-      </View >
-      <Image source={require("../../assets/splashscreen.png")} style={styles.title1} />
-      <Text style={styles.subtest}>Login to enjoy the life with me !
-Virtual World, Real Connection</Text>
-
+      <Image source={require("../../assets/icon.png")} style={styles.logo} />
+      <Text style={styles.title}>Welcome to BKSport!</Text>
+      <Text style={styles.subtest}>
+        Make it more convenient for you to book a pitch
+      </Text>
       <TouchableOpacity
         onPress={() => navigation.navigate("Login")}
         style={styles.button1}
@@ -51,47 +61,40 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    backgroundColor: "#ffffff",
+    backgroundColor: "#FFFFFF",
     justifyContent: "center",
   },
   title: {
     fontSize: 26,
     fontWeight: "bold",
-    marginBottom: 10,
+    marginBottom: 20,
     marginVertical: 20,
     marginTop: 15,
   },
-  title1: {
-    width: 0.8*width,
-    height: 0.05*height,
-    resizeMode: "contain",
-
-
-  },
   logo: {
-    width: 0.8*width,
-    height: 0.4*height,
-
+    marginTop: 20,
+    width: 400,
+    height: 250,
+    marginBottom: 50,
   },
-
   subtest: {
     fontSize: 16,
     textAlign: "center",
     marginHorizontal: 30,
     marginBottom: 30,
-    marginTop: 0.035*height,
+    marginTop: 10,
   },
   button1: {
-    marginTop: 0.05*height,
+    marginTop: 70,
     backgroundColor: "#199A8E",
-    padding: 12,
-    width: 0.7*width,
-    height: 0.06*height,
+    padding: 10,
+    width: 181.28,
+    height: 48,
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    borderRadius: '50%',
+    borderRadius: 8,
     paddingVertical: 10,
     paddingHorizontal: 49,
     gap: 10,
@@ -99,14 +102,14 @@ const styles = StyleSheet.create({
   button2: {
     marginTop: 40,
     backgroundColor: "#FFFFFF",
-    padding: 12,
-    width: 0.7*width,
-    height: 0.06*height,
+    padding: 10,
+    width: 181.28,
+    height: 48,
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    borderRadius: '50%',
+    borderRadius: 8,
     paddingVertical: 10,
     paddingHorizontal: 49,
     gap: 10,
