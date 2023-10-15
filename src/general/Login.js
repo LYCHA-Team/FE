@@ -17,7 +17,7 @@ export default Login = function ({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <TouchableOpacity
-        onPress={() => navigation.navigate("Welcome")}
+        onPress={() => navigation.navigate("Onboarding")}
         style={{ alignSelf: "left", marginLeft: 23 }}
       >
         <Icon name="arrow-left" size={30} />

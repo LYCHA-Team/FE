@@ -14,7 +14,7 @@ export default SignUp = function ({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <TouchableOpacity
-        onPress={() => navigation.navigate("Welcome")}
+        onPress={() => navigation.navigate("Login")}
         style={{ alignSelf: "left", marginLeft: 23 }}
       >
         <Icon name="arrow-left" size={30} />
@@ -110,7 +110,7 @@ export default SignUp = function ({ navigation }) {
         </View>
 
         <TouchableOpacity
-          onPress={() => handleRegister()}
+          onPress={() => navigation.navigate("SetupInterests") }
           style={{
             marginTop: 20,
             backgroundColor: "#e77c7c",
